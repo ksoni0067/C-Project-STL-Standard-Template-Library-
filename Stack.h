@@ -1,16 +1,16 @@
 #include<stdbool.h>
-
+#include<stddef.h>
 typedef struct {
-    int * arr;
+    void** arr;
     int n;
     int capacity;
+    size_t type;
 }Stack;
 
-void stackInit(Stack* s);
+void stackInit(Stack* s,size_t type);
 void stackFree(Stack* s);
-void resize(Stack* s,int new_capacity);
-void push(Stack* s ,int val);
-int pop(Stack* s);
+void push(Stack* s ,void* val,size_t size);
+void* pop(Stack* s);
 int size(Stack* s);
 bool isEmpty(Stack* s);
-int top(Stack* s);
+void* top(Stack* s);
