@@ -165,21 +165,21 @@ int max(int a,int b){
     }
     return b;
 }
-int pow(int x,int n){
+int power(int x,int n){
     if(x==0) return 0;
     if( n==0) return 1;
     if( n==1) return x;
-    id(n<0){
+    if(n<0){
         return 0;
     }
-    int ans=pow(x,n/2);
+    int ans=power(x,n/2);
     if(n%2==0){
         return ans*ans;
     }
     return ans*ans*x;
 
 }
-int sqrt(int num){
+int sqroot(int num){
     if(num<0){
         return -1;
     }
@@ -187,7 +187,7 @@ int sqrt(int num){
         return num;
     }
     int start=0;
-    int end=0;
+    int end=num;
     int ans=-1;
     while(start<=end){
         int m=start+(end-start)/2;
@@ -195,12 +195,12 @@ int sqrt(int num){
         if(sq==num){
             return m;
         }
-        else if(sq<n){
+        else if(sq<num){
             ans=m;
             start=m+1;
         }
         else{
-            e=m-1;
+            end=m-1;
         }
     }
     return ans;

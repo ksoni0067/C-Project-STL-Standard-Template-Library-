@@ -9,5 +9,5 @@ int LinearSearch(int* arr,int size,int target);
 int abs(int num);
 int min(int a,int b);
 int max(int a,int b);
-int pow(int x,int n);
-int sqrt(int num);
+int power(int x,int n);
+int sqroot(int num);
